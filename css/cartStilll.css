@@ -1,0 +1,274 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: #19191b;
+}
+
+*:focus {
+    outline: 0 !important;
+}
+
+body{
+  width: 100%;
+  height: 100%;
+}
+
+ ul li{
+  padding: 0;
+  border-bottom: 1px solid #bdb8d7;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  background-color: #111111;
+}    
+
+ul li a{
+  color: #bdb8d7;
+  display: block;
+  background-color: #111111;
+}
+
+/*ul li:hover{
+  background-color: #594f8d;
+}*/
+
+ul li:hover a{
+  color: #fff;
+}
+
+li, a, button{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+}
+
+li a{
+  padding: 20px;
+  transition: all 0.3s ease 0s;
+}
+
+li a:hover{
+  color: #0088a9;
+}
+
+button:hover{
+    background-color: #111111;
+}
+
+ul{
+  display: inherit;
+}
+
+div{
+ color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.ticket{
+  width: 100%;
+  margin: 0px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  padding-right: 50px;
+  display: inline-flex;
+  background-color: #111111;
+}
+
+.ticket ul li{
+  display: inline;
+}
+
+.remove{
+  width: 150px;
+  height: 30px;
+  background-color: red;
+  border: none;
+  border-radius: 20px;
+}
+
+.info{
+  margin-top: 30px;
+  width: 60%;
+}
+
+.continut{
+  display: inherit;
+  margin-top: 90px;
+}
+
+.locatie{
+  margin: 0px;
+  padding: 5px;
+  background-color: #111111;
+}
+
+.teams{
+  margin: 0px;
+}
+
+.teams ul{
+  margin: 0px;
+  padding: 5px;
+  background-color: #111111;
+  width: 100%;
+}
+
+.teams ul li{
+  background-color: #111111;
+  margin: 0px;
+}
+
+.data{
+  margin: 0px;
+  padding: 5px;
+  background-color: #111111;
+}
+
+img{
+  height: 30px;
+  width: auto;
+  background-color: #111111;
+}
+
+.ticket h3{
+  padding-top: 30px;
+  margin: 0;
+  padding-left: 0px;
+  background-color: #111111;
+}
+
+.price{
+  padding-top: 10px;
+  padding-left: 5px;
+  height: 30px;
+  background-color: #111111;
+}
+
+.num{
+  height: 30px;
+  background-color: #111111;
+}
+
+.myCart{
+  text-align: left;
+  font-size: 30px;
+  padding-left: 30px;
+  padding-top: 30px;
+  color: #bdb8d7;
+}
+
+.addButtons{
+  display: inline-grid;
+  background-color: #111111;
+  padding-left: 12%;
+  padding-top: 60px;
+}
+
+form{
+  text-align: left;
+}
+
+.cart{
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.detali{
+  margin-top: 150px;
+  margin-left: 50px;
+  width: 33%;
+  height: 500px;
+  background-color: #111111;
+}
+
+.row{
+  background-color: #111111; 
+  width: 500px; 
+  margin:0px;
+  padding-top: 30px;
+}
+
+.detali h6{
+  background-color: #111111; 
+  margin: 0px;
+  padding-top: 20px;
+}
+
+hr{
+  margin: 0px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: #111111;
+  border-color: #bdb8d7;;
+}
+
+.back{
+  text-align: center;
+  padding: 10px 25px;
+  background-color: red;
+  border: none;
+  border-radius: 20px;
+
+}
+
+.payment{
+  text-align: center;
+  padding: 10px 25px;
+  background-color: green;
+  border: none;
+  border-radius: 20px;
+}
+
+.number{
+  padding-top: 10px;
+  margin: 0px;
+  border: none;
+  background-color: #111111;
+  padding-top: 10px;
+}
+
+.numberEl{
+  font-size: 30px;
+  border: none;
+  background-color: #111111;
+
+}
+
+.numberEl button{
+  border: none;
+  background-color: #111111;
+  width: 30px;
+  font-size: 30px;
+  border-radius: 30px;
+}
+
+.numberEl button:hover{
+  background-color: #111111;
+}
+
+.tickets{
+  width: 63%;
+}
+
+.pret{
+  padding-left: 3%;
+  width: 15%;
+}
