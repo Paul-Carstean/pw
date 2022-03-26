@@ -83,7 +83,6 @@ if (isset($_POST['favorite'])){
             $result=mysqli_query($con,$sql);
         }
     }
-    header("location: baseball.php");
 }
 
 if(isset($_POST['searchButton'])){
@@ -91,9 +90,7 @@ if(isset($_POST['searchButton'])){
         $_SESSION['search'] = $_POST['searchInput'];
     }
 }
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -104,17 +101,17 @@ if(isset($_POST['searchButton'])){
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
- <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
   <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 </head>
 <body>
   <header class="navbar fixed-top">
-     <a href="baseball.php" style="text-decoration: none;"><h1 style="color: #bdb8d7; background-color: #111111;">SportShop</h1></a>
+       <a href="basketball.php" style="text-decoration: none;"><h1 style="color: #bdb8d7; background-color: #111111;">SportShop</h1></a>
       <nav class="nav-search">
           <div class="search">
-            <form action="baseball.php" method="post">
+            <form action="basketball.php" method="post">
                 <input type="text"
                     placeholder=" Search"
                     name="searchInput">
@@ -143,13 +140,13 @@ if(isset($_POST['searchButton'])){
                             }
                         }
                         ?></a></li>
-        <?php
-            if(isset($_SESSION['uname']))
-                echo "<li class=\"navli\"><a href=\"logout.php\"><i class=\"fas fa-sign-out-alt\"></i>  Logout</a></li>";
-            else
-                echo "<li class=\"navli\"><a href=\"login.php\"><i class=\"fas fa-sign-out-alt\"></i>  Login</a></li>";
+            <?php
+                if(isset($_SESSION['uname']))
+                    echo "<li class=\"navli\"><a href=\"logout.php\"><i class=\"fas fa-sign-out-alt\"></i>  Logout</a></li>";
+                else
+                    echo "<li class=\"navli\"><a href=\"login.php\"><i class=\"fas fa-sign-out-alt\"></i>  Login</a></li>";
 
-        ?>
+            ?>
       </ul> 
     </header>
 
@@ -158,16 +155,16 @@ if(isset($_POST['searchButton'])){
         <div class="sidebar">
             <ul>
                 <li><a href="index.php"><i class="fas fa-futbol"></i>  Football</a></li>
-                <li><a href="basketball.php"><i class="fas fa-basketball-ball"></i>  Basketball</a></li>
+                <li><a style="background-color:black; color: white; text-decoration: blink;"  href="basketball.php"><i class="fas fa-basketball-ball"></i>  Basketball</a></li>
                 <li><a href="tennis.php"><i class="far fa-tennis-ball"></i><span style="height: 20px; width: auto; margin-bottom: 2px;"class="iconify" data-icon="bx:bxs-tennis-ball"></span>  Tennis</a></li>
-                <li><a style="background-color:black; color: white; text-decoration: blink;" href="baseball.php" href="#"><i class="fas fa-baseball-ball"></i>
+                <li><a href="baseball.php"><i class="fas fa-baseball-ball"></i>
       Baseball</a></li>
             </ul> 
         </div>
     </div>
 
     <?php
-           $result=getData("baseball");
+            $result=getData("basketball");
             $ok=0;
             while($row=mysqli_fetch_assoc($result)){
                 if(isset($_SESSION['search']))
@@ -175,12 +172,12 @@ if(isset($_POST['searchButton'])){
                     $str1=$_SESSION['search'];
                     $str2=$row['team1'];
                     if(str_contains(strtoupper($row['team1']),strtoupper($_SESSION['search']))  || str_contains(strtoupper($row['team2']),strtoupper($_SESSION['search']))){
-                        ticket("baseball.php",$row['tag'],$row['team1'],$row['logo1'],$row['team2'],$row['logo2'],$row['location'],$row['date'],$row['price'],$row['id']);
+                        ticket("basketball.php",$row['tag'],$row['team1'],$row['logo1'],$row['team2'],$row['logo2'],$row['location'],$row['date'],$row['price'],$row['id']);
                         $ok=$ok+1;
                     }
                 }
                 else{
-                    ticket("baseball.php",$row['tag'],$row['team1'],$row['logo1'],$row['team2'],$row['logo2'],$row['location'],$row['date'],$row['price'],$row['id']);
+                    ticket("basketball.php",$row['tag'],$row['team1'],$row['logo1'],$row['team2'],$row['logo2'],$row['location'],$row['date'],$row['price'],$row['id']);
                 }
             }
             if($ok === 0 && isset($_SESSION['search']))
